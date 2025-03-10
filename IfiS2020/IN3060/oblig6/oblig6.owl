@@ -1,0 +1,356 @@
+@prefix : <http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#ancestor
+
+:ancestor a owl:ObjectProperty , owl:TransitiveProperty .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#dam
+
+:dam a owl:ObjectProperty ;
+	rdfs:subPropertyOf :ancestor .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#hadIntrerestIn
+
+:hadIntrerestIn a owl:ObjectProperty ;
+	owl:propertyChainAxiom _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first :trains ;
+	rdf:rest _:genid1 .
+
+_:genid1 a rdf:List ;
+	rdf:first :hasCompeted ;
+	rdf:rest rdf:nil .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#hasCompeted
+
+:hasCompeted a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#hasTrainer
+
+:hasTrainer a owl:ObjectProperty ;
+	owl:inverseOf :trains ;
+	rdfs:domain :Horse ;
+	rdfs:range :Person .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#hasWon
+
+:hasWon a owl:ObjectProperty ;
+	rdfs:subPropertyOf :hasCompeted .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#sire
+
+:sire a owl:ObjectProperty ;
+	rdfs:subPropertyOf :ancestor ;
+	rdfs:range :Horse .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#trains
+
+:trains a owl:ObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#age
+
+:age a owl:DatatypeProperty , owl:FunctionalProperty .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#name
+
+:name a owl:DatatypeProperty , owl:FunctionalProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#Animal
+
+:Animal a owl:Class ;
+	rdfs:subClassOf _:genid3 .
+
+_:genid3 a owl:Class ;
+	owl:unionOf _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first :Female ;
+	rdf:rest _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first :Male ;
+	rdf:rest rdf:nil .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#ColdbloodedHorse
+
+:ColdbloodedHorse a owl:Class ;
+	rdfs:subClassOf :Horse ;
+	owl:disjointWith :WarmbloodedHorse .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#Female
+
+:Female a owl:Class ;
+	owl:disjointWith :Male .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#Filly
+
+:Filly a owl:Class ;
+	rdfs:subClassOf :Female , :Horse , _:genid6 .
+
+_:genid6 a owl:Restriction ;
+	owl:onProperty :age ;
+	owl:someValuesFrom _:genid7 .
+
+_:genid7 a rdfs:Datatype ;
+	owl:onDatatype xsd:int ;
+	owl:withRestrictions _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first _:genid9 .
+
+_:genid9 xsd:maxExclusive "4"^^xsd:int .
+
+_:genid8 rdf:rest rdf:nil .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#Horse
+
+:Horse a owl:Class ;
+	rdfs:subClassOf :Animal , _:genid10 .
+
+_:genid10 a owl:Restriction ;
+	owl:onProperty :dam ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Female .
+
+:Horse rdfs:subClassOf _:genid11 .
+
+_:genid11 a owl:Restriction ;
+	owl:onProperty :sire ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Male .
+
+:Horse owl:disjointWith :HorseRace .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#HorseRace
+
+:HorseRace a owl:Class ;
+	owl:disjointWith :Person .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#Male
+
+:Male a owl:Class .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#MonteHorse
+
+:MonteHorse a owl:Class ;
+	rdfs:subClassOf :RaceHorse , _:genid12 .
+
+_:genid12 a owl:Restriction ;
+	owl:onProperty :hasCompeted ;
+	owl:allValuesFrom :MonteRace .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#MonteRace
+
+:MonteRace a owl:Class ;
+	rdfs:subClassOf :HorseRace .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#Person
+
+:Person a owl:Class ;
+	rdfs:subClassOf _:genid13 .
+
+_:genid13 a owl:Class ;
+	owl:unionOf _:genid15 .
+
+_:genid15 a rdf:List ;
+	rdf:first :Female ;
+	rdf:rest _:genid14 .
+
+_:genid14 a rdf:List ;
+	rdf:first :Male ;
+	rdf:rest rdf:nil .
+
+:Person rdfs:subClassOf _:genid16 .
+
+_:genid16 a owl:Restriction ;
+	owl:onProperty :name ;
+	owl:someValuesFrom xsd:string .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#RaceHorse
+
+:RaceHorse a owl:Class ;
+	rdfs:subClassOf :Horse , _:genid17 .
+
+_:genid17 a owl:Restriction ;
+	owl:onProperty :hasCompeted ;
+	owl:someValuesFrom :HorseRace .
+
+:RaceHorse rdfs:subClassOf _:genid18 .
+
+_:genid18 a owl:Restriction ;
+	owl:onProperty :hasTrainer ;
+	owl:someValuesFrom :Person .
+
+:RaceHorse rdfs:subClassOf _:genid19 .
+
+_:genid19 a owl:Restriction ;
+	owl:onProperty :name ;
+	owl:someValuesFrom xsd:string .
+
+:RaceHorse owl:hasKey _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first :name ;
+	rdf:rest rdf:nil .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#Stallion
+
+:Stallion a owl:Class ;
+	rdfs:subClassOf :Horse , :Male , _:genid21 .
+
+_:genid21 a owl:Restriction ;
+	owl:onProperty :age ;
+	owl:someValuesFrom _:genid22 .
+
+_:genid22 a rdfs:Datatype ;
+	owl:onDatatype xsd:int ;
+	owl:withRestrictions _:genid23 .
+
+_:genid23 a rdf:List ;
+	rdf:first _:genid24 .
+
+_:genid24 xsd:minInclusive "4"^^xsd:int .
+
+_:genid23 rdf:rest rdf:nil .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#SuperHorse
+
+:SuperHorse a owl:Class ;
+	rdfs:subClassOf :RaceHorse , _:genid25 .
+
+_:genid25 a owl:Restriction ;
+	owl:onProperty :hasWon ;
+	owl:minQualifiedCardinality "101"^^xsd:nonNegativeInteger ;
+	owl:onClass :HorseRace .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#WarmbloodedHorse
+
+:WarmbloodedHorse a owl:Class ;
+	rdfs:subClassOf :Horse .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#DocRodney
+
+:DocRodney a owl:NamedIndividual ;
+	:name "Doctor Rodney" .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#Elitloppet1986
+
+:Elitloppet1986 a owl:NamedIndividual , :HorseRace , _:genid26 .
+
+_:genid26 a owl:Class ;
+	owl:complementOf :MonteRace .
+
+:Elitloppet1986 :name "Elitloppet" .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#KjellH
+
+:KjellH a owl:NamedIndividual ;
+	:name "Kjell Håkonsen" .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#ReadySteadyGo
+
+:ReadySteadyGo a owl:NamedIndividual , :Filly , :MonteHorse ;
+	:name "Ready Steady Go" .
+# 
+# http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5#RexRodney
+
+:RexRodney a owl:NamedIndividual , :SuperHorse ;
+	:hasTrainer :KjellH ;
+	:hasWon :Elitloppet1986 ;
+	:sire :DocRodney ;
+	:name "Rex Rodney" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+
+_:genid27 owl:intersectionOf _:genid30 .
+
+_:genid30 a rdf:List ;
+	rdf:first :WarmbloodedHorse ;
+	rdf:rest _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first _:genid29 .
+
+_:genid29 a owl:Restriction ;
+	owl:onProperty :hasCompeted ;
+	owl:someValuesFrom :MonteRace .
+
+_:genid28 rdf:rest rdf:nil .
+
+_:genid27 a owl:Class ;
+	rdfs:subClassOf _:genid31 .
+
+_:genid31 a owl:Restriction ;
+	owl:onProperty :age ;
+	owl:someValuesFrom _:genid32 .
+
+_:genid32 a rdfs:Datatype ;
+	owl:onDatatype xsd:int ;
+	owl:withRestrictions _:genid35 .
+
+_:genid35 a rdf:List ;
+	rdf:first _:genid36 .
+
+_:genid36 xsd:minExclusive "4"^^xsd:int .
+
+_:genid35 rdf:rest _:genid33 .
+
+_:genid33 a rdf:List ;
+	rdf:first _:genid34 .
+
+_:genid34 xsd:maxExclusive "12"^^xsd:int .
+
+_:genid33 rdf:rest rdf:nil .
+# 
+# Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

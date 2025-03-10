@@ -1,0 +1,174 @@
+<h1 id="final-exam-in3030">Final exam IN3030</h1>
+<p>Candidate ID: 15633</p>
+<hr />
+<h2 id="java-and-synchronization">1 - Java and Synchronization</h2>
+<h3 id="java-threads-and-startup">1.1 - Java threads and startup</h3>
+<blockquote>
+<p>In a Java program, there is one main thread that is automatically started when a program starts: it executes the main method of the program. This method can start other threads. Can those thread also start other threads? Provide a short explanation.</p>
+</blockquote>
+<p>Absolutely. Regular threads started by the main thread have the same permissions as the main thread in terms of starting new threads.</p>
+<h3 id="java-threads-execution-on-multicore">1.2 - Java threads execution on Multicore</h3>
+<blockquote>
+<p>Explain briefly how 100 Java threads can appear to execute concurrently asif the CPU had 128 cores – despite it having only 4 cores.</p>
+</blockquote>
+<p>When you are creating 100 java threads, you are simultaneously creating 100 tasks, and with a cpu of 4 cores, it can work on the tasks 4 at a time. However, if any of the threads become idle, the cpu can work on another thread until the first thread has finished waiting. The threads do execute concurrently, however they do not all work in parallel. It is important to note that concurrency is not the same as parallelism.</p>
+<h3 id="java-synchronized">1.3 Java Synchronized</h3>
+<blockquote>
+<p>There are alternatives to using the Java keyword synchronized including many very specialized ways of synchronizaton. Pick your favorite alternatve to synchronized and explain why you prefer it and how it can replace synchronized. Your preference can be based on any type of argument: be it performance, usability, convenience, or a specialized use. The most important part of your answer will be your presentaton of the advantages and disadvantages in connecton with any specifc applicaton of your choice.</p>
+</blockquote>
+<p>Many of these alternatives are context dependent, but the reentrantlock is probably the most similar synchronization utility.<br />
+However, the cyclic barrier is a great, reusable utility that comes in handy when we distribute some workload independent of synchronizaton for each thread. This is often the fastest and best way to implement parallel algorithms as synchronization often cause massive time sinks, and is probably my favorite synchronization utility for that reason.</p>
+<h2 id="join-using-semaphores">2 - Join using semaphores</h2>
+<h3 id="join-replacement">2.1 Join replacement</h3>
+<blockquote>
+<p>You are to achieve the effect of Java’s join, but instead of using join, you should use semaphores as in the Java class Semaphore.The idea is to modify the JoinP Java program given below to NOT use join, but instead use semaphores. Your task is now to write a version of JoinP where you have the join with some Java code that makes the program work like the original JoinP program without using join but instead using semaphores.Provide the resulting program along with a short explanation of your solution.</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">import</span><span class="im"> java.util.concurrent.*;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">class</span> JoinP {</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="dt">static</span> <span class="bu">Semaphore</span> sem;</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb1-7" title="7">        <span class="dt">int</span> numberofthreads = <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb1-8" title="8">        sem = <span class="kw">new</span> <span class="bu">Semaphore</span>(-numberofthreads+<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb1-9" title="9">        <span class="bu">Thread</span>[] t = <span class="kw">new</span> <span class="bu">Thread</span>[numberofthreads];</a>
+<a class="sourceLine" id="cb1-10" title="10"></a>
+<a class="sourceLine" id="cb1-11" title="11">        <span class="kw">for</span> (<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; numberofthreads; j++) {</a>
+<a class="sourceLine" id="cb1-12" title="12">            (t[j] = <span class="kw">new</span> <span class="bu">Thread</span>( <span class="kw">new</span> <span class="fu">ExThread</span>() )).<span class="fu">start</span>();</a>
+<a class="sourceLine" id="cb1-13" title="13">        }</a>
+<a class="sourceLine" id="cb1-14" title="14"></a>
+<a class="sourceLine" id="cb1-15" title="15">        <span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb1-16" title="16">            sem.<span class="fu">acquire</span>();</a>
+<a class="sourceLine" id="cb1-17" title="17">        } <span class="kw">catch</span> (<span class="bu">InterruptedException</span> e) {</a>
+<a class="sourceLine" id="cb1-18" title="18">            e.<span class="fu">printStackTrace</span>();</a>
+<a class="sourceLine" id="cb1-19" title="19">        }</a>
+<a class="sourceLine" id="cb1-20" title="20"></a>
+<a class="sourceLine" id="cb1-21" title="21">    }</a>
+<a class="sourceLine" id="cb1-22" title="22"></a>
+<a class="sourceLine" id="cb1-23" title="23">    <span class="dt">static</span> <span class="kw">class</span> ExThread <span class="kw">implements</span> <span class="bu">Runnable</span> {</a>
+<a class="sourceLine" id="cb1-24" title="24">        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {</a>
+<a class="sourceLine" id="cb1-25" title="25">            <span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb1-26" title="26">                <span class="bu">TimeUnit</span>.<span class="fu">SECONDS</span>.<span class="fu">sleep</span>(<span class="dv">10</span>);</a>
+<a class="sourceLine" id="cb1-27" title="27">            } <span class="kw">catch</span> (<span class="bu">Exception</span> e) {</a>
+<a class="sourceLine" id="cb1-28" title="28">                <span class="kw">return</span>;</a>
+<a class="sourceLine" id="cb1-29" title="29">            } <span class="kw">finally</span> {</a>
+<a class="sourceLine" id="cb1-30" title="30">                sem.<span class="fu">release</span>();</a>
+<a class="sourceLine" id="cb1-31" title="31">            }</a>
+<a class="sourceLine" id="cb1-32" title="32">        }</a>
+<a class="sourceLine" id="cb1-33" title="33">    }</a>
+<a class="sourceLine" id="cb1-34" title="34">}</a></code></pre></div>
+<p>If the semaphore has fewer than 1 permit, calling sem.acquire() would cause the current thread to wait until some other thread increments the permits by calling sem.release(). Since we initiate the semaphore with -numberofthreads + 1 permits (or in this specific case, -9) when all threads have finished executing, there will be exactly one permit for the main thread to acquire.</p>
+<h3 id="test-case">2.2 Test Case</h3>
+<blockquote>
+<p>You are to write a Java program that demonstrates a test case for the program that you wrote in 2.1.Explain the test that you chose and why you think it shows that your program from 2.1 works – at least for your chosen test case (it does not – at all – have to be comprehensive – just show a typical case). Each thread could, for illustration, print what it does at each step – be sure to include an id of the thread doing the printing. Hint: You can “schedule” when threads actively try to do stuff by delaying them using, e.g.,TimeUnit.SECONDS.sleep(10); Provide the program and its output and any comments that you might have.</p>
+</blockquote>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">import</span><span class="im"> java.util.concurrent.Semaphore;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">class</span> TestJoinP {</a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb2-4" title="4">        TestJoinP to = <span class="kw">new</span> <span class="fu">TestJoinP</span>();</a>
+<a class="sourceLine" id="cb2-5" title="5">        to.<span class="fu">assertSemaphoreUpdate</span>();</a>
+<a class="sourceLine" id="cb2-6" title="6">    }</a>
+<a class="sourceLine" id="cb2-7" title="7"></a>
+<a class="sourceLine" id="cb2-8" title="8">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">assertSemaphoreUpdate</span>() {</a>
+<a class="sourceLine" id="cb2-9" title="9">        JoinP.<span class="fu">sem</span> = <span class="kw">new</span> <span class="bu">Semaphore</span>(<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb2-10" title="10">        <span class="co">// Run thread sequentially</span></a>
+<a class="sourceLine" id="cb2-11" title="11">        <span class="kw">new</span> JoinP.<span class="fu">ExThread</span>().<span class="fu">run</span>();</a>
+<a class="sourceLine" id="cb2-12" title="12">        <span class="dt">int</span> permits = JoinP.<span class="fu">sem</span>.<span class="fu">availablePermits</span>();</a>
+<a class="sourceLine" id="cb2-13" title="13">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;TEST assertSemaphoreUpdate &quot;</span>);</a>
+<a class="sourceLine" id="cb2-14" title="14">        <span class="kw">if</span> (permits == <span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb2-15" title="15">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;PASSED&quot;</span>);</a>
+<a class="sourceLine" id="cb2-16" title="16">        } <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb2-17" title="17">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;FAILED&quot;</span>);</a>
+<a class="sourceLine" id="cb2-18" title="18">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Reason: number of semaphore permits should be 1, was&quot;</span></a>
+<a class="sourceLine" id="cb2-19" title="19">             + permits);</a>
+<a class="sourceLine" id="cb2-20" title="20">        }</a>
+<a class="sourceLine" id="cb2-21" title="21">    }</a>
+<a class="sourceLine" id="cb2-22" title="22">}</a></code></pre></div>
+<p>Output: <code>TEST assertSemaphoreUpdate PASSED</code></p>
+<p>Note: it is pretty difficult to test the entire program since there is no actual work being done when the threads are sleeping. There is also no guarantee that the the program finishes in 10 seconds, so writing a test timing it wouldn’t be sufficient.</p>
+<h2 id="double-bubblesort">3 - Double bubblesort</h2>
+<blockquote>
+<p>Bubblesort is a sorting algorithm that sorts, e.g., an integer array A, by repeatedly going thru the array from one end to the other comparing neighboring elements to each other – and swapping them when they are not in order. Double-bubblesort is a variant of bubblesort that works by comparing not two elements at a time but rather three elements at a time and swapping them so that they are in order.</p>
+</blockquote>
+<h3 id="sequential-double-bubblesort">3.1 - Sequential Double-bubblesort</h3>
+<blockquote>
+<p>Write a sequential version of double-bubblesort in Java.Provide the Java program as your answer.</p>
+</blockquote>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">public</span> <span class="kw">class</span> DoubleBubbleSort {</a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">sort</span>(<span class="dt">int</span>[] arr) {</a>
+<a class="sourceLine" id="cb3-4" title="4">        <span class="dt">boolean</span> isSorted = <span class="kw">false</span>;</a>
+<a class="sourceLine" id="cb3-5" title="5">        <span class="kw">while</span> (!isSorted) {</a>
+<a class="sourceLine" id="cb3-6" title="6">            isSorted = <span class="kw">true</span>;</a>
+<a class="sourceLine" id="cb3-7" title="7">            <span class="kw">for</span> (<span class="dt">int</span> i=<span class="dv">0</span>; i&lt;arr.<span class="fu">length</span>-<span class="dv">1</span>; i += <span class="dv">2</span>) {</a>
+<a class="sourceLine" id="cb3-8" title="8">                <span class="dt">int</span> swap;</a>
+<a class="sourceLine" id="cb3-9" title="9">                <span class="kw">if</span> (arr[i] &gt; arr[i+<span class="dv">1</span>]) {</a>
+<a class="sourceLine" id="cb3-10" title="10">                    isSorted = <span class="kw">false</span>;</a>
+<a class="sourceLine" id="cb3-11" title="11">                    <span class="kw">if</span> (arr[i+<span class="dv">1</span>] &gt; arr[i+<span class="dv">2</span>]) {</a>
+<a class="sourceLine" id="cb3-12" title="12">                        swap = arr[i];</a>
+<a class="sourceLine" id="cb3-13" title="13">                        arr[i] = arr[i+<span class="dv">2</span>];</a>
+<a class="sourceLine" id="cb3-14" title="14">                        arr[i+<span class="dv">2</span>] = swap;</a>
+<a class="sourceLine" id="cb3-15" title="15">                    } <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb3-16" title="16">                        swap = arr[i];</a>
+<a class="sourceLine" id="cb3-17" title="17">                        arr[i] = arr[i+<span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb3-18" title="18">                        <span class="kw">if</span> (swap &gt; arr[i+<span class="dv">2</span>]) {</a>
+<a class="sourceLine" id="cb3-19" title="19">                            arr[i+<span class="dv">1</span>] = arr[i+<span class="dv">2</span>];</a>
+<a class="sourceLine" id="cb3-20" title="20">                            arr[i+<span class="dv">2</span>] = swap;</a>
+<a class="sourceLine" id="cb3-21" title="21">                        } <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb3-22" title="22">                            arr[i+<span class="dv">1</span>] = swap;</a>
+<a class="sourceLine" id="cb3-23" title="23">                        }</a>
+<a class="sourceLine" id="cb3-24" title="24">                    }</a>
+<a class="sourceLine" id="cb3-25" title="25">                } <span class="kw">else</span> <span class="kw">if</span> (arr[i+<span class="dv">1</span>] &gt; arr[i+<span class="dv">2</span>]) {</a>
+<a class="sourceLine" id="cb3-26" title="26">                    isSorted = <span class="kw">false</span>;</a>
+<a class="sourceLine" id="cb3-27" title="27">                    <span class="kw">if</span> (arr[i] &lt; arr[i+<span class="dv">2</span>]) {</a>
+<a class="sourceLine" id="cb3-28" title="28">                        swap = arr[i+<span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb3-29" title="29">                        arr[i+<span class="dv">1</span>] = arr[i+<span class="dv">2</span>];</a>
+<a class="sourceLine" id="cb3-30" title="30">                        arr[i+<span class="dv">2</span>] = swap;</a>
+<a class="sourceLine" id="cb3-31" title="31">                    } <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb3-32" title="32">                        swap = arr[i];</a>
+<a class="sourceLine" id="cb3-33" title="33">                        arr[i] = arr[i+<span class="dv">2</span>];</a>
+<a class="sourceLine" id="cb3-34" title="34">                        arr[i+<span class="dv">2</span>] = arr[i+<span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb3-35" title="35">                        arr[i+<span class="dv">1</span>] = swap;</a>
+<a class="sourceLine" id="cb3-36" title="36">                    }</a>
+<a class="sourceLine" id="cb3-37" title="37">                }</a>
+<a class="sourceLine" id="cb3-38" title="38">                <span class="kw">if</span> (i+<span class="dv">2</span> &gt; arr.<span class="fu">length</span>-<span class="dv">3</span> &amp;&amp; i+<span class="dv">2</span> &lt; arr.<span class="fu">length</span>-<span class="dv">1</span>) i = arr.<span class="fu">length</span>-<span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb3-39" title="39">            }</a>
+<a class="sourceLine" id="cb3-40" title="40">        }</a>
+<a class="sourceLine" id="cb3-41" title="41">    }</a>
+<a class="sourceLine" id="cb3-42" title="42">}</a></code></pre></div>
+<h3 id="testing-double-bubblesort">3.2 - Testing Double-bubblesort</h3>
+<blockquote>
+<p>Write a simple Java test program showing that your program from 3.1 can sort an array of 10 elements containing the numbers from 1 to 10 in reverse order. Print suitable test output from the program. Provide the program and its output.</p>
+</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">import</span><span class="im"> java.util.Arrays;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">class</span> TestDoubleBubbleSort {</a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb4-4" title="4">        <span class="dt">int</span>[] arr = <span class="kw">new</span> <span class="dt">int</span>[]{<span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>};</a>
+<a class="sourceLine" id="cb4-5" title="5"></a>
+<a class="sourceLine" id="cb4-6" title="6">        DoubleBubbleSort sorter = <span class="kw">new</span> <span class="fu">DoubleBubbleSort</span>();</a>
+<a class="sourceLine" id="cb4-7" title="7">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Input array: &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(arr));</a>
+<a class="sourceLine" id="cb4-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Sorting...&quot;</span>);</a>
+<a class="sourceLine" id="cb4-9" title="9">        sorter.<span class="fu">sort</span>(arr);</a>
+<a class="sourceLine" id="cb4-10" title="10">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Output array: &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(arr));</a>
+<a class="sourceLine" id="cb4-11" title="11">    }</a>
+<a class="sourceLine" id="cb4-12" title="12">}</a></code></pre></div>
+<p>Program output:</p>
+<pre class="console"><code>Input array: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+Sorting...
+Output array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code></pre>
+<h3 id="parallelizing-double-bubblesort">3.3 - Parallelizing Double-bubblesort</h3>
+<blockquote>
+<p>How can your program from 3.1 be parallelized? Describe the design of a solution that MUST be loyal to the algorithm, i.e., splitting the array into k parts that are double-bubblesorted individually then merge sorted, is not loyal as much of the speedup is gained by using merging, which is much more efficient for large arrays than any bubblesort. Hint: spend time on describing the parallelization as this is central to the course.</p>
+</blockquote>
+<p>To parallelize the double-bubblesort algorithm, we can divide the array into k parts in place, so that each thread has two boundaries, one upper boundary and one lower boundary. Then we can shift those boundaries by one index each iteration, so that we prevent it from terminating with an only locally sorted array. Termination criterion is verifying that all the local arrays are sorted twice. After we have seen that all the local arrays are sorted, we shift the boundaries once again and verify that the <strong>entire</strong> array is sorted. A cyclic barrier will be an excellent utility for this, as each iteration is dependent on all threads having finished. Due to the fact that some threads will have to do more work than other, we can give each threads multiple boundaries to sort and allow for task stealing. The k variable should be measured and determined empirically.</p>
+<h3 id="the-speed-of-light-in-vacuum">4.1 - The Speed of Light in Vacuum</h3>
+<blockquote>
+<p>What is the exact speed of light in vacuum? Give your answer in m/s and make sure it is exact.</p>
+</blockquote>
+<p>Speed of light = <span class="math inline">299792458<em>m</em>/<em>s</em></span></p>
+<h3 id="latency">4.2 Latency</h3>
+<blockquote>
+<p>In 1988, the latency for a so-called ping request, that is the time to send a packet over the internet from one point, A, to another point B, and a reply making its way from B to A, was about 200 ms for a ping request from Scandinavia to the US West Coast – approximately 10,000 km. In 2020, the ping time is about 180 ms. Explain why the time is almost the same after 32 years—despite great improvements in transatlantic bandwidth.</p>
+</blockquote>
+<p>The ping request has performance limitations defined by this universe’s laws of physics.<br />
+The ping signal speed is approaching that of the speed of light in vacuum, which we cannot do much to improve.</p>

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+
+export PYTHONIOENCODING=UTF-8
+
+export IN2110_PATH=$(pwd)
+IN2110_ENV="in2110-env"
+
+if [ ! -d "$IN2110_ENV" ]; then
+    python3.6 -m venv $IN2110_ENV
+fi
+
+set +e
+source .bashrc
+set -e
+
+pip install -U pip
+pip install -r requirements.txt
+pip install -e src
+
+python download-nltk-data.py
+
+echo
+echo "IN2110 environment created."
+echo "Run './in2110-shell' to launch environment."

@@ -1,0 +1,75 @@
+# Exercise 1
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fam: <http://www.ifi.uio.no/IN3060/family#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sim: <http://www.ifi.uio.no/IN3060/simpsons#> .
+
+# Exercise 2
+
+sim:Homer a foaf:Person ;
+          foaf:name "Homer Simpson" ;
+          foaf:age 36 .
+
+sim:Marge a foaf:Person ;
+          foaf:name "Marge Simpson" ;
+          foaf:age 34 .
+
+sim:Bart a foaf:Person ;
+          foaf:name "Bart Simpson" ;
+          foaf:age 10 .
+
+sim:Lisa a foaf:Person ;
+          foaf:name "Lisa Simpson" ;
+          foaf:age 8 .
+
+sim:Maggie a foaf:Person ;
+          foaf:name "Maggie Simpson" ;
+          foaf:age 1 .
+
+# Exercise 3
+
+# The Simpsons is a family, and members of the family are Marge, Homer,
+# Bart, Lisa and Maggie.
+sim:The_Simpsons a fam:Family ;
+          fam:hasFamilyMember sim:Homer ,
+                              sim:Marge ,
+                              sim:Bart ,
+                              sim:Lisa ,
+                              sim:Maggie .
+
+# Marge and Homer are married, i.e, Marge is the spouse of Homer and
+# Homer is the spouse of Marge
+sim:Homer fam:hasSpouse sim:Marge .
+sim:Marge fam:hasSpouse sim:Homer .
+
+# They are respectively the mother and father to Bart, Lisa
+# and Maggie.
+sim:Bart fam:hasFather sim:Homer ;
+          fam:hasMother sim:Marge .
+
+sim:Lisa fam:hasFather sim:Homer ;
+          fam:hasMother sim:Marge .
+
+sim:Maggie fam:hasFather sim:Homer ;
+          fam:hasMother sim:Marge .
+
+# Exercise 4
+
+# Maggie has the grandfather Abraham and the grandmother Mona.
+sim:Maggie fam:hasParent [ fam:hasFather sim:Abraham ] ,
+                         [ fam:hasMother sim:Mona ] .
+
+# Exercise 5
+
+# Lisa has the aunts Patty and Selma, and the uncle Herb
+sim:Lisa fam:hasParent [ fam:hasSister sim:Patty ] ,
+                       [ fam:hasSister sim:Selma ] ,
+                       [ fam:hasBrother sim:Herb ] .
+
+# Patty and selma are sisters
+sim:Patty fam:hasSister sim:Selma .
+sim:Selma fam:hasSister sim:Patty .
+
+# Exercise 6
+sim:Marge fam:hasSpouse [ fam:hasFather sim:Abraham ] .

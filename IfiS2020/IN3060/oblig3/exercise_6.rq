@@ -1,0 +1,5 @@
+PREFIX sim: <http://www.ifi.uio.no/IN3060/simpsons#>
+PREFIX fam: <http://www.ifi.uio.no/IN3060/family#>
+ASK {
+  sim:Homer fam:hasBrother sim:Herb .
+}

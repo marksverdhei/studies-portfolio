@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://sws.ifi.uio.no/inf3580/v14/oblig/6/racehorse" uri="racehorse.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-11" uri="dbpediaMapping.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/markus/ontologies/2020/3/untitled-ontology-5" uri="oblig6.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

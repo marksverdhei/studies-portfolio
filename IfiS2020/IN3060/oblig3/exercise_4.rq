@@ -1,0 +1,5 @@
+PREFIX sim: <http://www.ifi.uio.no/IN3060/simpsons#>
+PREFIX fam: <http://www.ifi.uio.no/IN3060/family#>
+SELECT ?grandmother WHERE {
+  sim:Maggie fam:hasParent|fam:hasMother|fam:hasFather [ fam:hasMother ?grandmother ] .
+}

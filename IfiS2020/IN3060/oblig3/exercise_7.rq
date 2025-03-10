@@ -1,0 +1,14 @@
+PREFIX fam: <http://www.ifi.uio.no/IN3060/family#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+CONSTRUCT {
+  ?b a foaf:Person ;
+     foaf:name ?name2 .
+  ?a a foaf:Person ;
+     foaf:name ?name1 ;
+     foaf:knows ?b .
+} WHERE {
+  ?a foaf:name "Homer Simpson";
+     foaf:name ?name1 ;
+     fam:hasSpouse ?b .
+  ?b foaf:name ?name2 .
+}

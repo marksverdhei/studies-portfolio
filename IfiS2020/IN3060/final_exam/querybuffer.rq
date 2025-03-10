@@ -1,0 +1,26 @@
+PREFIX sd: <http://social.distancing.org/>
+SELECT ?roomName ?time (GROUP_CONCAT(?name) as ?who) WHERE {
+    ?room a sd:Room ;
+          sd:name ?roomName .
+
+    ?pres a sd:Presence ;
+          sd:presInRoom ?room .
+
+    {
+        ?pres sd:presStart ?time .
+
+    } UNION {
+        ?pres sd:presEnd ?time .
+    }
+
+    OPTIONAL {
+        ?prevPres a sd:Presence ;
+        sd:presInRoom ?room ;
+        sd:presStart ?prevStart ;
+        sd:presEnd ?prevEnd ;
+        sd:presOfPerson ?person .
+        ?person sd:name ?name .
+        FILTER (?prevStart <= ?time && ?prevEnd > ?time)
+    }
+}
+GROUP BY ?roomName ?time ORDER BY ASC(?roomName) ASC(?time)

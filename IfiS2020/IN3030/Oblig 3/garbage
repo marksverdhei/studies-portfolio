@@ -1,0 +1,219 @@
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.*;
+
+class SieveWorker implements Runnable {
+
+}
+
+public class ParallelSieve {
+
+  int n;
+  int sqrtN;
+  int primeCount;
+  int numberOfThreads;
+  int subthreads;
+  byte[] bytes;
+  byte[][] paraBytes;
+  CountDownLatch stopSignal;
+  double paratime, totaltime;
+  ReentrantLock lock = new ReentrantLock();
+  ExecutorService threads;
+
+  public ParallelSieve(int n) {
+    this(n, 0);
+  }
+
+  public ParallelSieve(int n, int p) {
+      this.n = n;
+      numberOfThreads = p != 0 ? p : Runtime.getRuntime().availableProcessors();
+      subthreads = numberOfThreads-1;
+      sqrtN = (int) Math.sqrt(n);
+      bytes = new byte[n / 16 + 1];   // add 1 because of Integer rounding
+      paraBytes = new byte[subthreads][bytes.length];
+      stopSignal = new CountDownLatch(numberOfThreads);
+      threads = Executors.newFixedThreadPool(numberOfThreads);
+  }
+
+
+  int[] startPrimeFinding() {
+    sieveUpToSquared(); // sieve out all non-primes by using primes up to sqrtN
+    countPrimesAfterSquared(); // count primes after sqrtN
+    //System.out.println("\n-----No. of primes: " + primeCount);
+    int[] z = collectPrimes();
+    return z;
+  }
+
+
+  void sieveUpToSquared() {
+    ArrayList<Integer> firstPrimes = new ArrayList<>();
+    int currentPrime = 3;
+    primeCount++;
+
+    while (currentPrime <= sqrtN) {
+      firstPrimes.add(currentPrime);
+      traverseToSqrt(currentPrime);
+      // traverse(currentPrime);
+      currentPrime = findNextPrime(currentPrime + 2);
+      primeCount++;
+    }
+    // BOTTLENECK:
+    fillAllUncheckedComposites(firstPrimes);
+  }
+
+
+  void fillAllUncheckedComposites(final List<Integer> primes) {
+    int size = primes.size();
+
+    long a = System.nanoTime();
+    for (int i=0; i<subthreads; i++) {
+      int offset = i;
+      new Thread(
+      () -> {
+        for (int j=offset; j<size; j+=numberOfThreads) {
+          int p = primes.get(j);
+          traverse(p, paraBytes[offset]);
+        }
+        lock.lock();
+        try {
+          mergeTables(bytes, paraBytes[offset]);
+        } finally {
+          lock.unlock();
+        }
+        stopSignal.countDown();
+      });
+      // .start();
+    }
+
+    lock.lock();
+    try {
+      for (int j=subthreads; j<size; j+=numberOfThreads) {
+        traverse(primes.get(j));
+      }
+    } finally {
+      lock.unlock();
+    }
+    stopSignal.countDown();
+    try {
+      stopSignal.await();
+    } catch (InterruptedException e) {}
+
+  }
+
+  void mergeTables(byte[] a, byte[] b) {
+    for (int i=0; i<a.length; i++) {
+      a[i] |= b[i];
+    }
+  }
+
+
+  void countPrimesAfterSquared() {
+      int startAt;
+
+      if ((sqrtN + 1) % 2 == 0) {
+          startAt = sqrtN + 2;
+      } else {
+          startAt = sqrtN + 1;
+      }
+
+      int currentPrime = findNextPrime(startAt);
+
+      while (currentPrime != 0) {
+          primeCount++;
+          currentPrime = findNextPrime(currentPrime + 2);
+      }
+  }
+
+
+  int[] collectPrimes() {
+
+      int[] primes = new int[primeCount];
+      primes[0] = 2;
+      int currentPrime = 3;
+
+      for (int i = 1; i < primeCount; i++){
+          primes[i] = currentPrime;
+          currentPrime = findNextPrime(currentPrime + 2);
+      }
+      return primes;
+  }
+
+  void traverseToSqrt(int p) {
+    for (int i = p * p; i <= sqrtN; i += p * 2){
+        flip(i);
+    }
+  }
+
+  void traverse(int p) {
+    for (int i = p * p; i < n; i += p * 2){
+        flip(i);
+    }
+  }
+
+  void traverse(int p, byte[] bytes) {
+    for (int i = p * p; i < n; i += p * 2){
+        flip(i, bytes);
+    }
+  }
+
+  void flip(int i, byte[] bytes) {
+
+      int byteCell = i / 16;  // find respective cell (index) in byte[] bytes
+      int bit = (i / 2) % 8;  // find respective bit within byteIndex
+
+      /*
+      * 1 << bit shifts a binary 1 bit number of spaces to the left in the byte.
+      * 1 << 0 = 0001
+      * 1 << 1 = 0010
+      * 1 << 2 = 0100
+      * 1 << 3 = 1000, etc.
+      *
+      * | is the OR operand where we basically switch the relevant bit to a 1.
+      * |= works similarly to +=
+      * */
+      bytes[byteCell] |= (1 << bit);
+  }
+
+  void flip(int i) {
+
+      int byteCell = i / 16;  // find respective cell (index) in byte[] bytes
+      int bit = (i / 2) % 8;  // find respective bit within byteIndex
+
+      /*
+      * 1 << bit shifts a binary 1 bit number of spaces to the left in the byte.
+      * 1 << 0 = 0001
+      * 1 << 1 = 0010
+      * 1 << 2 = 0100
+      * 1 << 3 = 1000, etc.
+      *
+      * | is the OR operand where we basically switch the relevant bit to a 1.
+      * |= works similarly to +=
+      * */
+      bytes[byteCell] |= (1 << bit);
+  }
+
+
+  boolean isPrime(int i) {
+
+      int byteCell = i / 16;
+      int bit = (i / 2) % 8;
+
+      /*
+      * see bit shift explanation in flip(), same thing here.
+      * difference is instead of OR we have an AND operand, which in this case is used to compare
+      * your respective bit to a flipped bit, meaning it returns 0 if it hasn't been flipped (is a prime)
+      * and > 0 if it has been flipped.
+      * */
+      return (bytes[byteCell] & (1 << bit)) == 0;
+  }
+
+
+  int findNextPrime(int p) {
+      for (int i = p; i < n; i += 2) {
+          if (isPrime(i))
+              return i;
+      }
+      return 0;
+  }
+
+}

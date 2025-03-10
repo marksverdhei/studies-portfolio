@@ -1,0 +1,100 @@
+@prefix sd:    <http://social.distancing.org/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix person: <http://person.example.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+### Persons
+
+person:hook  a   sd:Person ;
+        sd:name  "Captain Hook" .
+person:smee  a   sd:Person ;
+        sd:name  "Mr. Smee" .
+person:peter  a  sd:Person ;
+        sd:name  "Peter Pan" .
+person:wendy  a  sd:Person ;
+        sd:name  "Wendy" .
+
+### Buildings
+
+sd:KN   a            sd:Building ;
+        sd:capacity  250 ;
+        sd:name      "Kristen Nygaards Hus" .
+
+sd:OJD  a            sd:Building ;
+        sd:capacity  1234 ;
+        sd:name      "Ole-Johan Dahls Hus" .
+
+### Rooms
+
+sd:OJDAssembler  a         sd:Room ;
+        sd:capacity        40 ;
+        sd:name            "OJD Datastue Assembler" ;
+        sd:roomInBuilding  sd:OJD .
+sd:OJDPostscript  a        sd:Room ;
+        sd:capacity        36 ;
+        sd:name            "OJD Seminarrom Postscript" ;
+        sd:roomInBuilding  sd:OJD .
+
+
+sd:KNStoreAud  a           sd:Room ;
+        sd:capacity        174 ;
+        sd:name            "KN Store Auditorium" ;
+        sd:roomInBuilding  sd:KN .
+
+
+sd:KNLilleAud  a           sd:Room ;
+        sd:capacity        98 ;
+        sd:name            "KN Lille Auditorium" ;
+        sd:roomInBuilding  sd:KN .
+
+### Presences
+
+[ a                sd:Presence ;
+  sd:presEnd       "2020-05-18T18:30:00"^^xsd:dateTime ;
+  sd:presInRoom    sd:OJDPostscript ;
+  sd:presOfPerson  person:peter ;
+  sd:presStart     "2020-05-18T17:00:00"^^xsd:dateTime
+] .
+
+[ a                sd:Presence ;
+  sd:presEnd       "2020-05-18T17:30:00"^^xsd:dateTime ;
+  sd:presInRoom    sd:OJDPostscript ;
+  sd:presOfPerson  person:smee ;
+  sd:presStart     "2020-05-18T16:00:00"^^xsd:dateTime
+] .
+
+[ a                sd:Presence ;
+  sd:presEnd       "2020-05-17T16:30:00"^^xsd:dateTime ;
+  sd:presInRoom    sd:OJDPostscript ;
+  sd:presOfPerson  person:hook ;
+  sd:presStart     "2020-05-17T08:00:00"^^xsd:dateTime
+] .
+
+[ a                sd:Presence ;
+  sd:presEnd       "2020-05-18T16:30:00"^^xsd:dateTime ;
+  sd:presInRoom    sd:OJDPostscript ;
+  sd:presOfPerson  person:hook ;
+  sd:presStart     "2020-05-18T08:00:00"^^xsd:dateTime
+] .
+
+[ a                sd:Presence ;
+  sd:presEnd       "2020-05-18T18:30:00"^^xsd:dateTime ;
+  sd:presInRoom    sd:OJDPostscript ;
+  sd:presOfPerson  person:wendy ;
+  sd:presStart     "2020-05-18T18:20:00"^^xsd:dateTime
+] .
+
+[ a                sd:Presence ;
+  sd:presEnd       "2020-05-19T17:00:00"^^xsd:dateTime ;
+  sd:presInRoom    sd:KNLilleAud ;
+  sd:presOfPerson  person:peter ;
+  sd:presStart     "2020-05-19T16:00:00"^^xsd:dateTime
+] .
+
+[ a                sd:Presence ;
+  sd:presEnd       "2020-05-19T16:30:00"^^xsd:dateTime ;
+  sd:presInRoom    sd:OJDPostscript ;
+  sd:presOfPerson  person:peter ;
+  sd:presStart     "2020-05-19T08:00:00"^^xsd:dateTime
+] .

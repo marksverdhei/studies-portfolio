@@ -1,0 +1,28 @@
+
+
+n = 2000000
+sequentialSieve: 34218709
+parallelSieve: 34052089
+sequential factorization: 123518740
+parallel factorization: 63313408
+
+
+n = 20000000
+sequentialSieve: 306536375
+parallelSieve: 256120694
+sequential factorization: 1183176251
+parallel factorization: 619218800
+
+
+n = 200000000
+sequentialSieve: 3199021945
+parallelSieve: 3020785038
+sequential factorization: 8587422741
+parallel factorization: 4483397402
+
+
+n = 2000000000
+sequentialSieve: 33044079061
+parallelSieve: 30319422418
+sequential factorization: 77336109779
+parallel factorization: 45428794445

@@ -1,0 +1,9 @@
+PREFIX sd: <http://social.distancing.org/>
+SELECT ?name WHERE {
+    ?building sd:name ?name ;
+              sd:capacity ?buildingcapacity .
+    ?room sd:roomInBuilding ?buiding .
+    ?room sd:capacity ?roomcapacity .
+}
+GROUP BY ?name ?buildingcapacity  
+HAVING (SUM(?roomcapacity) < ?buildingcapacity)

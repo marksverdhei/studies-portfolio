@@ -1,0 +1,4 @@
+<http://www.ifi.uio.no/IN3060/simpsons#Homer> <http://xmlns.com/foaf/0.1/knows> <http://www.ifi.uio.no/IN3060/simpsons#Lisa> .
+<http://www.ifi.uio.no/IN3060/simpsons#Homer> <http://xmlns.com/foaf/0.1/knows> <http://www.ifi.uio.no/IN3060/simpsons#Maggie> .
+<http://www.ifi.uio.no/IN3060/simpsons#Homer> <http://xmlns.com/foaf/0.1/knows> <http://www.ifi.uio.no/IN3060/simpsons#Bart> .
+<http://www.ifi.uio.no/IN3060/simpsons#Homer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .

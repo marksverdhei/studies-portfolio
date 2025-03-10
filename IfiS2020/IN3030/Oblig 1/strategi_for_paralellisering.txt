@@ -1,0 +1,8 @@
+1:
+del array opp i mindre deler og utfør a2s på hver
+FORSØKT, RESULTAT: samme tid som a2s, ingen særlig nytte
+
+2:
+del array opp i t subarrays og sammenlign med toppen av q for hvert steg i søket
+
+3:

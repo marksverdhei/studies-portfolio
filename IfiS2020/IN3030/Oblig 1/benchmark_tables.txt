@@ -1,0 +1,67 @@
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+\multicolumn{8}{|c|}{n = 1000
+} \\
+
+\hline k & a1 & a2s & a2p t = 2 & t = 4 & t = 8 & t = 16 & t = 32 \\\hline k = 20
+ & 154618ns & 10963ns & 256712ns & 477070ns & 2.35ms & 4.11ms & 8.29ms
+\\
+\hline k = 100
+ & 126183ns & 38311ns & 408336ns & 556478ns & 2.95ms & 7.46ms & 8.52ms
+\\
+
+\hline 
+\multicolumn{8}{|c|}{n = 10000
+} \\
+
+\hline k & a1 & a2s & a2p t = 2 & t = 4 & t = 8 & t = 16 & t = 32 \\\hline k = 20
+ & 768696ns & 36315ns & 252058ns & 510664ns & 595918ns & 1.1ms & 2.44ms
+\\
+\hline k = 100
+ & 794259ns & 79813ns & 310659ns & 893202ns & 691222ns & 2.28ms & 4.87ms
+\\
+
+\hline 
+\multicolumn{8}{|c|}{n = 100000
+} \\
+
+\hline k & a1 & a2s & a2p t = 2 & t = 4 & t = 8 & t = 16 & t = 32 \\\hline k = 20
+ & 9.16ms & 251001ns & 396509ns & 457287ns & 1.25ms & 1.24ms & 2.68ms
+\\
+\hline k = 100
+ & 9.24ms & 306745ns & 499027ns & 523025ns & 1.17ms & 1.62ms & 3.58ms
+\\
+
+\hline 
+\multicolumn{8}{|c|}{n = 1000000
+} \\
+
+\hline k & a1 & a2s & a2p t = 2 & t = 4 & t = 8 & t = 16 & t = 32 \\\hline k = 20
+ & 102.44ms & 2.31ms & 1.7ms & 1.39ms & 1.93ms & 2.45ms & 4.24ms
+\\
+\hline k = 100
+ & 100.39ms & 2.38ms & 1.75ms & 1.49ms & 1.93ms & 3.71ms & 4.73ms
+\\
+
+\hline 
+\multicolumn{8}{|c|}{n = 10000000
+} \\
+
+\hline k & a1 & a2s & a2p t = 2 & t = 4 & t = 8 & t = 16 & t = 32 \\\hline k = 20
+ & 1.3s & 23.37ms & 13.55ms & 10.81ms & 11.93ms & 15.14ms & 16.13ms
+\\
+\hline k = 100
+ & 1.39s & 24.59ms & 14.22ms & 10.33ms & 13.68ms & 14.54ms & 17.49ms
+\\
+
+\hline 
+\multicolumn{8}{|c|}{n = 100000000
+} \\
+
+\hline k & a1 & a2s & a2p t = 2 & t = 4 & t = 8 & t = 16 & t = 32 \\\hline k = 20
+ & 15.31s & 234.21ms & 129.63ms & 102.95ms & 103.26ms & 105.59ms & 107.4ms
+\\
+\hline k = 100
+ & 15.27s & 233.9ms & 130.01ms & 105.14ms & 107.44ms & 106.06ms & 108.14ms
+\\
+\hline\end{tabular}

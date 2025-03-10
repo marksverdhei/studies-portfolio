@@ -1,0 +1,1463 @@
+@prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dbp:   <http://dbpedia.org/ontology/> .
+@prefix dbpo:  <http://dbpedia.org/ontology/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Tore Bjørn Skjølsvik"
+                ] ;
+  dc:date       "1998"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Rex Rodney" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Forus Travbane" ;
+                  geo:lat         58.891190 ;
+                  geo:long        5.727190
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Reier E. Eide"
+                ] ;
+  dc:date       "1994"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Fiskerens kone" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Ved Møllebukta" ;
+                  geo:lat         58.941782 ;
+                  geo:long        5.669231
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1972"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Lekeskulptur" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Måkeveien i Kvernevik" ;
+                  geo:lat         58.966986 ;
+                  geo:long        5.602897
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Marit Lyckander"
+                ] ;
+  dc:date       "1986"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Bølgen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Mosvannsparken" ;
+                  geo:lat         58.957229 ;
+                  geo:long        5.719146
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1981"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Kalv og fole" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Tjensvoll skole" ;
+                  geo:lat         58.950269 ;
+                  geo:long        5.704224
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Ståle Kyllingstad"
+                ] ;
+  dc:date       "1933"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Gutten og havfruen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kannikparken" ;
+                  geo:lat         58.964917 ;
+                  geo:long        5.729569
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Magnus Vigrestad"
+                ] ;
+  dc:date       "1958"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Fotballspilleren" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Holbergsgata ved Stavanger stadion" ;
+                  geo:lat         58.965437 ;
+                  geo:long        5.712818
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Per Ung."
+                ] ;
+  dc:date       "2000"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Cornelius Cruys" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Bispebryggen/Jorenholmen" ;
+                  geo:lat         58.971924 ;
+                  geo:long        5.735659
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Kjersti Wexelsen Goksøyr"
+                ] ;
+  dc:date       "2010"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Innsyn - utsyn" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Den står i endepunktet av Blå promenade ved Badedammen" ;
+                  geo:lat         58.971590 ;
+                  geo:long        5.747792
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 10" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Stavanger tinghus" ;
+                  geo:lat         58.969300 ;
+                  geo:long        5.736500
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Marshall Fredericks"
+                ] ;
+  dc:date       "1958"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Gasellen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Ved Breiavatnet" ;
+                  geo:lat         58.967068 ;
+                  geo:long        5.734222
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 00" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Natvigs Minde" ;
+                  geo:lat         58.976556 ;
+                  geo:long        5.733244
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Barbara Hepworth"
+                ] ;
+  dc:date       "1968"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Et minne om 'Figure of landscape'" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Foran Stavanger kunstforening på Madlaveien" ;
+                  geo:lat         58.962736 ;
+                  geo:long        5.722683
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Eirik Haugland"
+                ] ;
+  dc:date       "1953"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Andemor" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kongsgård skole" ;
+                  geo:lat         58.968967 ;
+                  geo:long        5.731920
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 22" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Rogaland Kunstmuseum" ;
+                  geo:lat         58.955200 ;
+                  geo:long        5.702900
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 14" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Musegata Bussholdeplass" ;
+                  geo:lat         58.964502 ;
+                  geo:long        5.732615
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Erik Haugland"
+                ] ;
+  dc:date       "1953"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Gutten og andemor" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Byparken ved Kongsgård skole" ;
+                  geo:lat         58.969027 ;
+                  geo:long        5.732095
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 04" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Valberget Parkeringshallen" ;
+                  geo:lat         58.971981 ;
+                  geo:long        5.731588
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1960"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Folungene" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Johannesparken" ;
+                  geo:lat         58.969151 ;
+                  geo:long        5.748208
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Magnus Vigrestad"
+                ] ;
+  dc:date       "2004"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Barbarkvinnen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Mostunhagen ved Rogaland Kunstmuseum" ;
+                  geo:lat         58.955818 ;
+                  geo:long        5.702458
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Sofus Madsen (usikkert)"
+                ] ;
+  dc:date       "1915"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Christian Bjelland" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Christian Bjellands plass på Verven." ;
+                  geo:lat         58.971836 ;
+                  geo:long        5.747896
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 18" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kiellandsmyrå Fotballøkka" ;
+                  geo:lat         58.960296 ;
+                  geo:long        5.721959
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 08" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Haugesundsgata 3 Statoil" ;
+                  geo:lat         58.968849 ;
+                  geo:long        5.750845
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Erik Haugland"
+                ] ;
+  dc:date       "1995"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Bertram C. Middelthon" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Bybergplassen" ;
+                  geo:lat         58.975923 ;
+                  geo:long        5.720016
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1971"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Akrobatfamilien" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kristianlyst skole" ;
+                  geo:lat         58.937090 ;
+                  geo:long        5.734144
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 12" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kjelvene" ;
+                  geo:lat         58.969050 ;
+                  geo:long        5.747445
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 02" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Strandkaien Tilfluktsrom" ;
+                  geo:lat         58.972700 ;
+                  geo:long        5.724900
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Intravision bestående av Per Åge Lyså Bjarne Kvimsland og Yngve Sandboe"
+                ] ;
+  dc:date       "2006"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Animal Shape" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kunstverket henger i gangbrua mellom skole- og gymnastikkbygget på Nylund skole" ;
+                  geo:lat         58.964988 ;
+                  geo:long        5.750125
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 16" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Henrik Steffens gate" ;
+                  geo:lat         58.969800 ;
+                  geo:long        5.725700
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 06" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Stavanger domkirke" ;
+                  geo:lat         58.969848 ;
+                  geo:long        5.733670
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Irma Bruun Hodne"
+                ] ;
+  dc:date       "1956"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Barn med fugler" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Taugata/Avaldsnesgata på Storhaug" ;
+                  geo:lat         58.965239 ;
+                  geo:long        5.748347
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "R. Christensen"
+                ] ;
+  dc:date       "1995"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Vekter" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Steinkargata rett ved Østervåg" ;
+                  geo:lat         58.972242 ;
+                  geo:long        5.734671
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Tore Bjørn Skjølsvik"
+                ] ;
+  dc:date       "1985"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "St. Svithun" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "St. Svithun skole" ;
+                  geo:lat         58.964737 ;
+                  geo:long        5.740203
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Arne Vinje Gunnerud"
+                ] ;
+  dc:date       "1985"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Så sant jeg lever" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Ramsvigtunet Sykehjem og Omsorgsboliger" ;
+                  geo:lat         58.957061 ;
+                  geo:long        5.755370
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Gunn Harbitz"
+                ] ;
+  dc:date       "2000"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Together" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Oljemuseet sjøsiden" ;
+                  geo:lat         58.973836 ;
+                  geo:long        5.735312
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Svein Magnus Håvardstein"
+                ] ;
+  dc:date       "1985"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Sau og lam" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Østervåg" ;
+                  geo:lat         58.971321 ;
+                  geo:long        5.735927
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Gøril Førsund."
+                ] ;
+  dc:date       "1993"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Lendegutt med Fagamatøren" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Lendelunden" ;
+                  geo:lat         58.970148 ;
+                  geo:long        5.728320
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hilde Mæhlum"
+                ] ;
+  dc:date       "1981"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Årvåken" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Mosvannsparken" ;
+                  geo:lat         58.958167 ;
+                  geo:long        5.707629
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1991"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Kilden" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "SR-Bank Bjergsted." ;
+                  geo:lat         58.974242 ;
+                  geo:long        5.721447
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Per Palle Storm"
+                ] ;
+  dc:date       "1950"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Sven Oftedal" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Sven Oftedals plass" ;
+                  geo:lat         58.966493 ;
+                  geo:long        5.738384
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Gøril Førsund."
+                ] ;
+  dc:date       "1995"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Skolemusikanten" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Storhaug skole" ;
+                  geo:lat         58.966262 ;
+                  geo:long        5.741846
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Aase Texmon Rygh"
+                ] ;
+  dc:date       "1995"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Møbius" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Utenfor inngangen til Rogaland Kunstmuseum i Mosvannsparken" ;
+                  geo:lat         58.955106 ;
+                  geo:long        5.703660
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne."
+                ] ;
+  dc:date       "1980"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Lars H. Lende" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Lars Hertervigs gate" ;
+                  geo:lat         58.970609 ;
+                  geo:long        5.727645
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1999"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Thonning Olsen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Bjergstedparken" ;
+                  geo:lat         58.976581 ;
+                  geo:long        5.718743
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Mari Røysamb"
+                ] ;
+  dc:date       "1994"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Skulpturobjekter i bakken" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Arkeologisk museum" ;
+                  geo:lat         58.963702 ;
+                  geo:long        5.730291
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Kristoffer Nasilowski"
+                ] ;
+  dc:date       "1995"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Prometheus" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Madlamark skole" ;
+                  geo:lat         58.950437 ;
+                  geo:long        5.679267
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1980"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Lekeskulptur" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Auglend skole" ;
+                  geo:lat         58.949533 ;
+                  geo:long        5.695842
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Skule Vaksvik"
+                ] ;
+  dc:date       "1998"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Katt med Gjess" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Madla Bydelshus" ;
+                  geo:lat         58.942075 ;
+                  geo:long        5.679852
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Stinius Fredriksen"
+                ] ;
+  dc:date       "1925"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Gutten og bukken" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Byparken" ;
+                  geo:lat         58.968858 ;
+                  geo:long        5.734874
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Arnold Haukeland"
+                ] ;
+  dc:date       "1968"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Sjøfartsmonumentet" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Ved Honnørbryggen" ;
+                  geo:lat         58.970528 ;
+                  geo:long        5.730788
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1987"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Forstenet insektliv" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Skeie skole skolegården." ;
+                  geo:lat         59.002142 ;
+                  geo:long        5.726770
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Irma Bruun Hodne"
+                ] ;
+  dc:date       "1984"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Mor og barn" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Mosheim sykehjem" ;
+                  geo:lat         58.951998 ;
+                  geo:long        5.711873
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Ottar Espedal"
+                ] ;
+  dc:date       "1955"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Christian Bjelland" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kleivaparken" ;
+                  geo:lat         58.968504 ;
+                  geo:long        5.729727
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Erik Haugland"
+                ] ;
+  dc:date       "1959"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Kvinnene ved vannposten" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kleivå" ;
+                  geo:lat         58.968261 ;
+                  geo:long        5.729143
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Jens Erland"
+                ] ;
+  dc:date       "1995"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Historisk grunn" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Hafrsfjord skole" ;
+                  geo:lat         58.943953 ;
+                  geo:long        5.656288
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Michael O'Donnel"
+                ] ;
+  dc:date       "1995"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Skulptur" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Universitetet i Stavanger" ;
+                  geo:lat         58.936327 ;
+                  geo:long        5.699322
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Erik Haugland"
+                ] ;
+  dc:date       "1967"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Gabriel Olsen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Ved St. Johannes kirke" ;
+                  geo:lat         58.968662 ;
+                  geo:long        5.748914
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "2002"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Oljearbeideren" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Foran Oljemuseet" ;
+                  geo:lat         58.973004 ;
+                  geo:long        5.735116
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Jan Groth"
+                ] ;
+  dc:date       "2009"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "En stele til Stavanger" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Mosvannsparken." ;
+                  geo:lat         58.956356 ;
+                  geo:long        5.702129
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Per Ung"
+                ] ;
+  dc:title      "Leda og svanen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Nederst i Kannikbekken/Prestegårdsparken" ;
+                  geo:lat         58.965941 ;
+                  geo:long        5.732135
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 21" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Mosvannsparken" ;
+                  geo:lat         58.960477 ;
+                  geo:long        5.707945
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Ottar Espeland"
+                ] ;
+  dc:date       "1976"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Gutt og ponni" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kirkegata" ;
+                  geo:lat         58.970464 ;
+                  geo:long        5.733128
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Svein Magnus Håvardstein"
+                ] ;
+  dc:title      "Fole" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Roaldsøy skole." ;
+                  geo:lat         58.959815 ;
+                  geo:long        5.737274
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Kristoff Nasilowski"
+                ] ;
+  dc:date       "2001"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Børge Olsen-Hagen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kleivaparken" ;
+                  geo:lat         58.969096 ;
+                  geo:long        5.728391
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 17" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "St Svithun skole Klasserom 204" ;
+                  geo:lat         58.964600 ;
+                  geo:long        5.739900
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Jan Næss"
+                ] ;
+  dc:date       "1995"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Halvor Sivertsen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Badedammen" ;
+                  geo:lat         58.971949 ;
+                  geo:long        5.748181
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 07" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kirkegårdsveien" ;
+                  geo:lat         58.963966 ;
+                  geo:long        5.736712
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Andreas Bøe"
+                ] ;
+  dc:date       "1962"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Frigjøring" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Folkets Hus. Mosaikk i foajeen" ;
+                  geo:lat         58.938101 ;
+                  geo:long        5.699309
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Marit Aanestad"
+                ] ;
+  dc:date       "1998"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Been (Kitty Kielland)" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kiellandhagen ved Breiavatnet" ;
+                  geo:lat         58.969027 ;
+                  geo:long        5.731615
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Roland Lengauer"
+                ] ;
+  dc:date       "1990"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Den gode hyrde" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Våland skole." ;
+                  geo:lat         58.961231 ;
+                  geo:long        5.733735
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Erik Haugland"
+                ] ;
+  dc:date       "1966"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Johan Peter Lunde" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "St. Johannes kirke" ;
+                  geo:lat         58.968511 ;
+                  geo:long        5.749232
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 11" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Jens Zetlitz gate St. Olav-strøket" ;
+                  geo:lat         58.967418 ;
+                  geo:long        5.729447
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Tone Thiis Schjetne"
+                ] ;
+  dc:date       "1983"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Go'dagen (Kånå)" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Lille Sølvbergtorget" ;
+                  geo:lat         58.971419 ;
+                  geo:long        5.734637
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 01" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Indre vågen Fiskeutsalget" ;
+                  geo:lat         58.970509 ;
+                  geo:long        5.730407
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Kåre Orud"
+                ] ;
+  dc:date       "1958"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Fiskaren" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Fiskepiren" ;
+                  geo:lat         58.971662 ;
+                  geo:long        5.739321
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Ottar Espeland"
+                ] ;
+  dc:date       "1938"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Andreas Bærem Olsen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Parken til Alders Hvile Storhaugveien 40" ;
+                  geo:lat         58.965393 ;
+                  geo:long        5.746487
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Johannes Bloch Hellum"
+                ] ;
+  dc:date       "1986"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Brutt lenke" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Ytterst ute ved havet på Smiodden i Kvernevik" ;
+                  geo:lat         58.970526 ;
+                  geo:long        5.593870
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 15" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Madlaveien" ;
+                  geo:lat         58.964100 ;
+                  geo:long        5.727600
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 05" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Arneageren" ;
+                  geo:lat         58.970985 ;
+                  geo:long        5.733237
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Erik Haugland"
+                ] ;
+  dc:date       "1931"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Barcelonafiskerne" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Ved Hermetikkindustriens laboratorium på Eiganes" ;
+                  geo:lat         58.967574 ;
+                  geo:long        5.722519
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 19" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Lars Hertervigs plass" ;
+                  geo:lat         58.972197 ;
+                  geo:long        5.721997
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 09" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Stavanger Svømmehallen" ;
+                  geo:lat         58.969400 ;
+                  geo:long        5.728300
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Gøril Førsund"
+                ] ;
+  dc:date       "1994"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Bestemor og barn" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kampens plass" ;
+                  geo:lat         58.972374 ;
+                  geo:long        5.715411
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Magnus Vigrestad"
+                ] ;
+  dc:date       "1928"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Alexander L. Kjelland" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Torget" ;
+                  geo:lat         58.969712 ;
+                  geo:long        5.731962
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 13" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Hetlandsgata 53 Privat hjem" ;
+                  geo:lat         58.968967 ;
+                  geo:long        5.739633
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 03" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Breigata 14 Butikk" ;
+                  geo:lat         58.972556 ;
+                  geo:long        5.733933
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Gunnar Janson"
+                ] ;
+  dc:date       "1931"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Arne Garborg" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Byparken" ;
+                  geo:lat         58.969126 ;
+                  geo:long        5.733683
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Fritz Røed"
+                ] ;
+  dc:date       "1983"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Sverd i fjell" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Møllebukta" ;
+                  geo:lat         58.941379 ;
+                  geo:long        5.671898
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "2006"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Ti øre timen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Lervigtunet" ;
+                  geo:lat         58.968989 ;
+                  geo:long        5.755642
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Reidar Aasland."
+                ] ;
+  dc:date       "1998"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Årets Stavanger-bedrift" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Holmen ved DSD-bygget" ;
+                  geo:lat         58.973591 ;
+                  geo:long        5.732174
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1996"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Streng i rom" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Vestibylen i Politikammeret" ;
+                  geo:lat         58.963280 ;
+                  geo:long        5.736026
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Bård Breivik"
+                ] ;
+  dc:date       "1998"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Skara Brae" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Rogaland Kunstmuseum" ;
+                  geo:lat         58.955379 ;
+                  geo:long        5.702961
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Roland Lengauer"
+                ] ;
+  dc:date       "1981"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Moses-fontenen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Forusbeen 3" ;
+                  geo:lat         58.892273 ;
+                  geo:long        5.732976
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Stinius Fredriksen"
+                ] ;
+  dc:date       "1948"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Lars Hertervig" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Lars Hertervigs plass" ;
+                  geo:lat         58.972285 ;
+                  geo:long        5.722138
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hubert Wilfan"
+                ] ;
+  dc:date       "1975"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Theodor Dahl" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Paradis" ;
+                  geo:lat         58.959645 ;
+                  geo:long        5.746523
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Frank Åsnes"
+                ] ;
+  dc:date       "2000"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Skulptur i betong" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Mosvannsparken" ;
+                  geo:lat         58.960120 ;
+                  geo:long        5.709437
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Stinius Fredriksen"
+                ] ;
+  dc:date       "1981"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Pike med sjal" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Bjergstedparken" ;
+                  geo:lat         58.975884 ;
+                  geo:long        5.720014
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1997"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Leiv Isaksen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Utenfor Rogaland Teater" ;
+                  geo:lat         58.965601 ;
+                  geo:long        5.732783
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Nico Widerberg"
+                ] ;
+  dc:date       "2013"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Utøya-minnesmerke" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Lundsneset Hundvåg" ;
+                  geo:lat         59.011646 ;
+                  geo:long        5.753317
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Svein Magnus Håvarstein"
+                ] ;
+  dc:date       "1993"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Johanna og Broremann" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Lars Oftedals plass" ;
+                  geo:lat         58.970913 ;
+                  geo:long        5.735355
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Gustav Vigeland"
+                ] ;
+  dc:date       "1917"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Sigbjørn Obstfelder" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Breiavatnet ved Kongsgård skole" ;
+                  geo:lat         58.969003 ;
+                  geo:long        5.732159
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Gøril Førsund."
+                ] ;
+  dc:date       "1997"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Maren" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kampen skole" ;
+                  geo:lat         58.971573 ;
+                  geo:long        5.716450
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Asbjørn Andersen"
+                ] ;
+  dc:date       "1991"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Kilen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Utenfor Hundvåg Idrettshall og Austbø skole" ;
+                  geo:lat         58.994469 ;
+                  geo:long        5.736290
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Hugo Frank Wathne"
+                ] ;
+  dc:date       "1995"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Henrik Steffens" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Løvdalssvingen" ;
+                  geo:lat         58.970374 ;
+                  geo:long        5.728434
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Bjørn Melbye Gulliksen"
+                ] ;
+  dc:date       "1997"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Skulptur" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Tasta skole" ;
+                  geo:lat         58.983466 ;
+                  geo:long        5.679308
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Ottar Espeland"
+                ] ;
+  dc:date       "1952"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Frihetsmonumentet" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Madlaveien ved Mosvannsparken" ;
+                  geo:lat         58.961156 ;
+                  geo:long        5.710644
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Erik Haugland"
+                ] ;
+  dc:date       "1959"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Olavsbrønnen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Olavskleiva" ;
+                  geo:lat         58.968260 ;
+                  geo:long        5.729135
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Tordis Hoem"
+                ] ;
+  dc:date       "2008"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "En annen strand" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Strandkaien" ;
+                  geo:lat         58.970966 ;
+                  geo:long        5.728811
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Erik Haugland"
+                ] ;
+  dc:date       "1950"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Lars Olsen Skrefsrud" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Vår Frues plass på Storhaug" ;
+                  geo:lat         58.9677538 ;
+                  geo:long        5.7409062
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Antony Gormley"
+                ] ;
+  dc:date       "2003"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Broken Column 20" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Solvang skole Gårdsplass" ;
+                  geo:lat         58.968500 ;
+                  geo:long        5.724300
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Arne Vinje Gunnerud"
+                ] ;
+  dc:date       "1984"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Soltre" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Domkirkeplassen" ;
+                  geo:lat         58.970075 ;
+                  geo:long        5.733594
+                ]
+] .
+
+[ a             dbp:Sculpture ;
+  dc:creator    [ a          foaf:Person ;
+                  foaf:name  "Irma Bruun Hodne"
+                ] ;
+  dc:date       "1993"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  dc:title      "Gustav Natvig-Pedersen" ;
+  geo:location  [ a               geo:Point ;
+                  dc:description  "Kleivaparken" ;
+                  geo:lat         58.937529 ;
+                  geo:long        5.698448
+                ]
+] .
+
+
+### 2020-05-11T13:23:32.754Z

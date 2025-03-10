@@ -1,0 +1,7 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?person ?age WHERE {
+  ?sim foaf:name ?person ;
+       foaf:age ?age .
+  FILTER (?age > 10)
+}
+ORDER BY DESC(?age)

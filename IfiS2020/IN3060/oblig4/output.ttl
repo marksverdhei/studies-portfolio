@@ -1,0 +1,9 @@
+@prefix fam:   <http://www.ifi.uio.no/IN3060/family#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sim:   <http://www.ifi.uio.no/IN3060/simpsons#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+sim:Homer  a        foaf:Person ;
+        foaf:knows  sim:Lisa , sim:Maggie , sim:Bart .

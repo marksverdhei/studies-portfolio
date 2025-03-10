@@ -1,0 +1,37 @@
+\begin{tabular}{|c|c|c|c|c|c|c|c|} \hline n & a1 & a2s & a2p t = 2 & t = 4 & t = 8 & t = 16 & t = 32 \\ \hline 
+ n = 1000
+ & 202213ns & 10765ns & 253736ns & 654727ns & 2.07ms & 5.3ms & 7.3ms  \\
+ \hline  
+ n = 10000
+ & 826168ns & 34484ns & 287296ns & 414306ns & 759498ns & 1.57ms & 4.57ms  \\
+ \hline  
+ n = 100000
+ & 8.79ms & 262041ns & 383678ns & 422132ns & 2.8ms & 2.43ms & 2.19ms  \\
+ \hline  
+ n = 1000000
+ & 101.21ms & 2.31ms & 1.6ms & 1.37ms & 1.67ms & 2.29ms & 4.2ms  \\
+ \hline  
+ n = 10000000
+ & 1.3s & 23.59ms & 13.65ms & 10.44ms & 12.24ms & 14.26ms & 15.58ms  \\
+ \hline  
+ n = 100000000
+ & 14.75s & 230.65ms & 128.46ms & 99.98ms & 101.77ms & 101.96ms & 107.0ms  \\
+ \hline  \end{tabular} \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline n & a1 & a2s & a2p t = 2 & t = 4 & t = 8 & t = 16 & t = 32 \\ \hline 
+ n = 1000
+ & 180108ns & 44168ns & 395131ns & 874772ns & 3.28ms & 4.24ms & 11.08ms  \\
+ \hline  
+ n = 10000
+ & 778193ns & 82689ns & 261555ns & 905067ns & 1.16ms & 1.3ms & 3.13ms  \\
+ \hline  
+ n = 100000
+ & 8.93ms & 327321ns & 465181ns & 570972ns & 917712ns & 1.51ms & 3.65ms  \\
+ \hline  
+ n = 1000000
+ & 99.14ms & 2.38ms & 1.71ms & 1.41ms & 2.16ms & 3.13ms & 5.88ms  \\
+ \hline  
+ n = 10000000
+ & 1.29s & 23.58ms & 13.58ms & 10.42ms & 13.18ms & 13.97ms & 17.87ms  \\
+ \hline  
+ n = 100000000
+ & 14.85s & 232.44ms & 128.79ms & 98.74ms & 99.06ms & 104.1ms & 106.97ms  \\
+ \hline  \end{tabular}

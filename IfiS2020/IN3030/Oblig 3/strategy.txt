@@ -1,0 +1,26 @@
+
+find all primes up to sqrt(n)
+using traverseSmall
+fill in in parallel
+
+
+It seems that the process does not work because of race conditions within the byes
+
+Proposals:
+#1
+ let all threads tick off their own versions of the sieve/table, then reduce the
+ tables by and-ing all the bytes together
+ pro:
+  no need for synchronization
+ con:
+  copying the bytes might be slow and expensive in memory
+  and-ing all the bytes together might be slow??
+
+#2
+ declare each part of the bytearray as belonging to thread-i, for that task
+ this entails a high-low parameter for the traversal function
+
+ pro:
+  removes possibility of race conditions
+ con:
+  does not utilize all threas if one finishes before the rest

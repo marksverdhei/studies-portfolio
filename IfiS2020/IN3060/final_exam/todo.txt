@@ -1,0 +1,3 @@
+TODO: endre blank nodes slik at det er _:x istedenfor :_x
+TODO: 3f: Entailment and derivability
+TODO: task 5

@@ -1,0 +1,6 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX fam: <http://www.ifi.uio.no/IN3060/family#>
+SELECT ?person ?parent WHERE {
+  ?person fam:hasMother|fam:hasFather ?parent .
+}
+ORDER BY ?parent

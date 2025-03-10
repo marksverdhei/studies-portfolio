@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while getopts ":d" opt; do
+    case "${opt}" in
+	d)
+	    export IN2110_DEBUG="true"
+	    ;;
+    esac
+done
+shift $((OPTIND-1))
+
+export IN2110_PATH=$(dirname $(python -c "import os,sys; print(os.path.realpath(sys.argv[1]))" $0))
+
+bash --init-file $IN2110_PATH/.bashrc
