@@ -1,0 +1,72 @@
+---
+title: "Homework06"
+author: "Markus Heiervang"
+date: "19/10/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# nifty code using the pacman package
+# it checks if the packages specified below are installed, if not, they will be installed, if yes, they will be loaded
+if (!require("pacman")) install.packages("pacman")
+
+pacman::p_load(rstudioapi, tidyverse)
+
+# set the current working directory to the one where this file is
+current_working_dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+setwd(current_working_dir)
+```
+
+
+
+# Homework (in book: 4.10.1) 
+In this exercise, you will perform the analysis corresponding to Figure 4.1 on page 70. 
+
+1. Load in the data set `ELP_frequency.csv` into your R session. 
+```{r}
+df = read.csv("ELP_frequency.csv")
+df
+```
+2. Use `mutate()` to apply the `log10()` function to the frequency column (`Freq`) (logarithms will be explained in Chapter 5).
+```{r}
+df = mutate(df, Freq = log10(Freq))
+df
+```
+3. Fit a linear model in which response time (`RT`) are modeled as a function of log frequencies. 
+```{r}
+# The log10 function is already applied in-place on the dataframe
+# So we don't need to apply it again
+model = lm(df$RT ~ df$Freq, data = df)
+summary(model)
+```
+4. Create a plot for the relationship between these two variables. 
+```{r}
+ggplot(df, aes(x = Freq, y = RT)) + geom_point(color = "blue")
+```
+
+5. Can you add a horizontal line showing the mean response duration using `geom_hline()` and the `yintercept` aesthetic?
+```{r}
+ggplot(df, aes(x = Freq, y = RT)) + 
+  geom_point(color = "blue") + 
+  geom_hline(yintercept = mean(df$RT), color = "red")
+```
+
+
+6. Can you add the regression line from your model?
+```{r}
+coefs = coefficients(model)
+intercept = coefs[["(Intercept)"]]
+slope = coefs[["df$Freq"]]
+
+ggplot(df, aes(x = Freq, y = RT)) + 
+  geom_point(color = "blue") + 
+  geom_hline(yintercept = mean(df$RT), color = "red") + 
+  geom_abline(intercept = intercept, slope = slope)
+```
+
+(7. Upload your Rmarkdown file (`.Rmd`) and a knitted document (`.html` or `.pdf`) to Canvas. (deadline: 19.10.2021, 23.59h CET))
+

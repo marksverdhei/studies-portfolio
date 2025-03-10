@@ -1,0 +1,92 @@
+---
+title: "Homework09"
+author: "Markus Sverdvik Heiervang"
+date: "9/11/2021"
+output: html_document
+---
+
+## HOMEWORK (Winter 7.12.2)
+Let’s assess the degree to which perceptual words differ in terms of iconicity as a function of sensory modality, as explored in Winter et al. (2017) (see Chapter 2). 
+The following code loads in the Lynott and Connell (2009) modality ratings for adjectives and our iconicity ratings. 
+The two tibbles are then merged, and a subset of the columns is extracted using `select()`.
+
+```{r, setup, include=FALSE}
+
+# nifty code using the pacman package
+# it checks if the packages specified below are installed, if not, they will be installed, if yes, they will be loaded
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(rstudioapi, tidyverse, broom)
+
+# set the current working directory to the one where this file is
+current_working_dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+setwd(current_working_dir)
+
+```
+
+```{r exercise_4_prep, warning = F, message = F}
+
+# load in data
+lyn <- read_csv("lynott_connell_2009_modality.csv")
+icon <- read_csv('perry_winter_2017_iconicity.csv')
+
+# Merge data
+both <- 
+  left_join(lyn, icon) %>% 
+  select(Word, DominantModality, Iconicity)
+
+head(both)
+
+# Drop the missing entry
+both = drop_na(both)
+```
+
+Fit a linear model where `Iconicity` is modeled as a function of the categorical predictor `DominantModality`. Write a little summary of what the output of the model means.
+Can you use the coefficients to derive predictions for all five categories?
+Compare your results against the descriptive means, for which you can use `group_by()` and `summarize()`.
+
+```{r, warning = F, message = F}
+model = lm(Iconicity ~ DominantModality, data=both, singular.ok=FALSE)
+model
+```
+The intercept resembles Auditory modalities with respect to iconicity, while the 
+other coefficients resemble the differences between each other
+```{r, warning = F, message = F}
+model_summary = summary(model)
+coefs = coef(model_summary)
+coefs
+
+intercept = coefs[1, 1]
+```
+
+From the model parameters, we can see which categorical variable that has the most and least iconicity. Essentially, the prediction is the dot product between the input vector and the coefficient summed with the intercept. We can consider the categorical variable as a one-hot encoded vector where there is one entry for each category:  
+
+A vector representing the Gustatory category can thus be represented as the following: [1 0 0 0]
+
+An Visual would then be [0 0 0 1]
+
+Example:
+
+Iconicity for visual gets predicted as (where * is the dot product)
+
+[0 0 0 1] * [-1.45 -0.44 -1.25 -1.03] + 2.256 = 
+-1.03 + 2.256 = 1.226
+
+the coefficient for the first category would then of course be 
+[0 0 0 0] * [-1.45 -0.44 -1.25 -1.03] + 2.256 = 2.256
+
+Since the word only can have a single category, the formula simply becomes the coefficient for the category plus the intercept.
+```{r, warning = F, message = F}
+as.matrix(coefs[2:5,0:1] + intercept)
+```
+We can ensure that these are the correct predictions by using the predict function and comparing
+```{r, warning = F, message = F}
+x = tibble(DominantModality=sort(unique(both$DominantModality)))
+x$PredictedIconicity = predict(model, x)
+x
+```
+```{r, warning = F, message = F}
+means = both %>% group_by(DominantModality) %>% summarize(mean(Iconicity))
+x$Means = means[["mean(Iconicity)"]]
+x
+```
+Turns out the results are identical

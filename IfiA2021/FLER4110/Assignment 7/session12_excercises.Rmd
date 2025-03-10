@@ -1,0 +1,188 @@
+---
+title: "Session12 - Inferential stats - FLER2110"
+author: Timo Roettger
+date: "8/11/2021"
+output: html_document
+---
+
+```{r, setup, include=FALSE}
+
+# nifty code using the pacman package
+# it checks if the packages specified below are installed, if not, they will be installed, if yes, they will be loaded
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(rstudioapi, tidyverse, ggbeeswarm, learnB4SS)
+
+# set the current working directory to the one where this file is
+current_working_dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+setwd(current_working_dir)
+
+```
+
+# Walkthrough
+
+We will be looking at a familiar data set: the similarity data set from Winter and Matlock.
+
+Let's remind us on whats going on in the data.
+
+```{r data}
+
+# Load our data set
+sim <- read_csv("winter_matlock_2013_similarity.csv")
+
+head(sim)
+
+```
+
+Participants drew fictional villages on a map solely based on what they have read about the village (relative to another village). 
+The researchers measured the `Distance` of the drawn villages.
+Village descriptions and names were either similar or different with respect to their phonological form (`Phon`) or their semantic properties (`Sem`).
+
+## A simple linear model
+Let's predict `Distance` based on `Phon` and `Sem`.
+
+```{r lm_simple}
+
+# linear model
+xlm <- lm(Distance ~ Phon + Sem,
+          data = sim)
+
+summary(xlm)
+
+```
+
+We get a bunch of information. 
+Now that we have learned about uncertainty and significance testing, we can interpret the whole model output. 
+The model estimates that phonologically similar villages are drawn 5.795 units further away than phonologically different villages (the intercept). 
+This difference is statistically not significant (p = 0.1667). 
+So if the null hypothesis is true, i.e. phonological similarity has no impact on distance, than the obtained t-value (t = 1.386) or more extreme t-values are too likely for us to reject the null. 
+Moreover, the model estimates that semantically similar villages are drawn 10.184 units closer than semantically different villages (the intercept). 
+This difference is statistically significant (p = 0.0154). 
+So if the null hypothesis is true, i.e. semantically similarity has no impact on distance, than the obtained t-value (t = -2.435) or more extreme t-values are unlikely enough for us to reject the null. 
+## Extract predictions
+Let's extract the models predictions for all combinations of `Phon` and `Sem`.
+
+```{r predict}
+
+# predict
+## new df for prediction
+newpreds <- tibble(expand.grid(Phon = unique(sim$Phon),
+                               Sem = unique(sim$Sem)))
+
+## predict based on model
+sim_preds <- predict(xlm, 
+                     newpreds,
+                     interval = 'confidence')
+
+sim_predictions <- cbind(newpreds, sim_preds)
+sim_predictions
+
+```
+
+## Plot predictions
+Now we plot the model estimates and their 95% confidence intervals.
+
+```{r plot}
+
+sim_predictions %>%
+  ggplot(aes(x = Phon, 
+             y = fit,
+             color = Sem)) +
+  geom_point(position = position_dodge(0.3)) +
+  geom_errorbar(aes(ymin = lwr, 
+                    ymax = upr),
+                position = position_dodge(0.3),
+                width = 0.2) +
+  theme_minimal()
+
+```
+
+# Exercises
+## Excercise 1
+
+We now go back to the nettle data set introduced at early stages during the class.
+
+```{r data2}
+
+# Load our data set
+nettle <- read_csv("nettle_1999_climate.csv")
+head(nettle)
+
+```
+
+### (a) 
+Run a linear regression that predicts `Population` based on standardized `Area`.
+I standardized the predictor `Area` for you.
+
+```{r lm_simple2}
+
+nettle <- nettle %>% 
+  mutate(Area_c = (mean(Area) - Area) / sd(Area))
+
+# YOUR MODEL HERE
+
+```
+
+### (b) 
+Interpret the model estimates and the p-values
+
+```{r interpret}
+
+# YOUR INTERPRETATION HERE
+
+```
+
+### (c)
+Extract model predictions for `Area_c` and plot a scatter plot with the regression line and the respective 95% confidence interval.
+
+```{r predict2}
+
+# YOUR CODE HERE
+
+```
+
+## Homework
+### (a)
+Take the similarity data from the walkthrough.
+Run a model that predicts `Distance` based on standardized `Phon`, `Sem` and their interaction.
+
+```{r interaction}
+
+# YOUR MODEL HERE
+
+```
+
+### (b)
+Interpret the model estimates and the p-values
+
+```{r interpret}
+
+# YOUR INTERPRETATION HERE
+
+```
+
+### (c)
+Compare your results to the results by Winter & Matlock (2013) - Experiment 2a (see PDF in Files). Do you get the same results as them? If not why? 
+
+```{r interpret}
+
+# YOUR ANSWER HERE
+
+```
+
+### (Bonus I)
+Extract model predictions for all combinations of Phon and Sem and plot the results and the respective 95% confidence intervals.
+
+```{r predict3}
+
+# YOUR CODE HERE
+
+```
+
+### (BONUS II)
+Superimpose the model estimates on top of the actual data, plotted as points. 
+
+```{r predict3}
+
+# YOUR CODE HERE
+
+```

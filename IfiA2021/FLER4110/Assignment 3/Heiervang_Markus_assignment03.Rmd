@@ -1,0 +1,46 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# FLER4110 - Assignment 3
+
+Markus Sverdvik Heiervang - markuhei
+
+***
+
+## Part 1 - Exploring chips-language connection
+
+```{r}
+dataset <- read.csv(file = 'chips_df.csv')
+mean(dataset[["chips"]])
+```
+
+```{r}
+sd(dataset[["chips"]])
+```
+
+```{r}
+mean(dataset[["languages"]])
+```
+
+```{r}
+sd(dataset[["languages"]])
+```
+
+```{r}
+hist(dataset[["chips"]])
+```
+
+```{r}
+hist(dataset[["languages"]])
+```
+
+## Part 2 - My R journey so far  
+
+To be honest, I must admit that I am not quite the target audience for this course. This course is aimed at language students, but I have my background from informatics and computer science. Since I had very little prior experience with R, I think it is safe to say that my true R journey started with this course. Computational statistics on the other hand, is something I have much experience with from studies and work, as I'm writing my masters thesis in language technology. I have used R once before starting this course, in a data science project when we needed to apply Logistic PCA: a function that had no implementation in python. In other words, a couple lines of code.
+
+Nothing that I have done so far have I considered challenging, but I do not have the expectations of being challenged this early in the course, considering that I have taken similar courses before. I think I will learn much more later in the course when the obligatory assignments increase in difficulty and work, and by the end of the course become a confident, or at least comfortable R programmer. To be completely honest I have not attended many of the classes yet and have an insufficient amount of data to give helpful feedback on. But I look forward to get more training in applying computational statistics to different use cases, primarily with language data. I do however think that the use of mandatory (weekly) assignment is an excellent way to help students learn programming and the curriculum well. I am a big fan of practical exercises.
+
+So to conclude, as I am at the very start of my R journey, it is only natural that my experience has been very forgiving given my prior knowledge and I look forward to learn more as the assignments increase in difficulty and finally become a comfortable R programmer. 

@@ -1,0 +1,26 @@
+
+plot(
+    x = 1,
+    y = 1,
+    xlab="",
+    ylab="",
+    type = 'n',
+    xlim = c(-2, 2),
+    ylim = c(-2, 2),
+    axes=FALSE
+)
+
+points(x = 0, y = 0, pch = 19, col = "yellow", cex = 50)
+points(x = 0, y = 0, cex = 50)
+points(x = -.5, y = .2, pch = 19, cex = 10, col = "white")
+points(x = .5, y = .2, pch = 19, cex = 10, col = "white")
+
+points(x = -.5, y = .2, pch = 19, cex = 6)
+points(x = .5, y = .2, pch = 19, cex = 6)
+
+mouth.size = .7
+
+mouth.x = seq(-mouth.size, mouth.size, length.out = 100)
+mouth.y = - sqrt(mouth.size-(mouth.x**2)) - .4
+
+lines(x = mouth.x, y = mouth.y)
