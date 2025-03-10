@@ -1,0 +1,27 @@
+@prefix urb: <http://leifhka.org/in5800/urb/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ottr: <http://ns.ottr.xyz/0.4/> .
+@prefix o-rdf: <http://tpl.ottr.xyz/rdf/0.1/> .
+
+@prefix ex: <http://example.com/ns#> .
+
+ex:Organization [
+    ottr:IRI ?orgIRI,
+    xsd:string ?name,
+    xsd:string ?address,
+    xsd:string ?zipcode
+] :: {
+    o-rdf:Type(?orgIRI, urb:Organization),
+    ottr:Triple(?orgIRI, urb:name, ?name),
+    ottr:Triple(?orgIRI, urb:locatedAt, _:buildingIRI),
+    ex:Building(_:building, ?address, ?zipcode)
+} .
+
+ex:Building [
+    ottr:IRI ?buildingIRI,
+    xsd:string ?address,
+    xsd:string ?zipcode
+] :: {
+    o-rdf:Type(?buildingIRI, urb:Building),
+    ottr:Triple()
+}

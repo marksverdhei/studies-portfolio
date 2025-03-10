@@ -1,0 +1,113 @@
+<head>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+
+<body>
+	<form id="wordField" class="wordField" method="post">
+		<label for="word">select word</label>
+		<select name="word" id="word">
+			{% for word in words %}
+				<option value="{{word}}">{{word}}</option>
+			{% endfor %}
+		</select>
+		<label for="word">select model</label>
+		<select name="model" id="model">
+			{% for model in models %}
+				<option value="{{model}}">{{model}}</option>
+			{% endfor %}
+		</select>
+
+		<input type="submit" id="subimt" />
+	</form>
+	<div id='clusterPlot'></div>
+	<script type="text/javascript">
+
+		var word = "paper"
+
+		const form = document.getElementById("wordField")
+
+		form.addEventListener("submit", e => {
+			// e.preventDefault()
+			console.dir(form)
+			console.log(e)
+		})
+
+
+		Plotly.d3.csv('/embeddings', function(err, rows) {
+
+			const unpack = (rows, key) => rows.map(row => row[key])
+
+			var data = [
+				{
+					x: unpack(rows, 'pc1'),
+					y: unpack(rows, 'pc2'),
+					z: unpack(rows, 'pc3'),
+					mode: 'markers',
+					type: 'scatter3d',
+					text: unpack(rows, 'sentence'),
+					marker: {
+					  color: 'rgb(23, 190, 207)',
+					  size: 6
+					},
+					hoverinfo: 'text'
+				},
+				// {
+				// 	alphahull: 1,
+				// 	opacity: 0.1,
+				// 	type: 'mesh3d',
+				// 	x: unpack(rows, 'pc1'),
+				// 	y: unpack(rows, 'pc2'),
+				// 	z: unpack(rows, 'pc3'),
+				// 	hovermode: false
+				// }
+			];
+
+			var layout = {
+				autosize: true,
+				height: 1080,
+				scene: {
+					aspectratio: {
+						x: 1,
+						y: 1,
+						z: 1
+					},
+					camera: {
+						center: {
+							x: 0,
+							y: 0,
+							z: 0
+						},
+						eye: {
+							x: 1.25,
+							y: 1.25,
+							z: 1.25
+						},
+						up: {
+							x: 0,
+							y: 0,
+							z: 1
+						}
+					},
+					xaxis: {
+						type: 'linear',
+						zeroline: false
+					},
+					yaxis: {
+						type: 'linear',
+						zeroline: false
+					},
+					zaxis: {
+						type: 'linear',
+						zeroline: false
+					}
+				},
+				title: `Word sense clusters for "${word}" (reduced with pca)`,
+				width: 1920
+			};
+
+			Plotly.newPlot('clusterPlot', data, layout);
+
+		});
+	</script>
+</body>

@@ -1,0 +1,28 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+@prefix ex-sc: <http://example.org/suburbia/citizen/> 
+@prefix urb: <http://leifhka.org/in5800/urb/> 
+
+($x rdfs:subClassOf $y), ($y rdfs:subClassOf $z) -> ($x rdfs:subClassOf $z)
+($x rdf:type $y), ($y rdfs:subClassOf $z) -> ($x rdf:type $z)
+
+($C owl:equivalentClass $D) -> ($C rdfs:subClassOf $D)
+($C owl:equivalentClass $D) -> ($D rdfs:subClassOf $C)
+
+($r rdfs:subPropertyOf $p), ($p rdfs:subPropertyOf $q) -> ($p rdfs:subPropertyOf $q)
+($x $r $y), ($r rdfs:subPropertyOf $p) -> ($x $p $y)
+
+($x $r $y), ($r rdfs:domain $d) -> ($x rdf:type $d)
+($x $r $y), ($r rdfs:range $d) -> ($y rdf:type $d)
+
+($r owl:inverseOf $p), ($x $r $y) -> ($y $p $x)
+($r owl:inverseOf $p), ($x $p $y) -> ($y $r $x)
+
+($r owl:equivalentProperty $p) -> ($r rdfs:subPropertyOf $p)
+($r owl:equivalentProperty $p) -> ($p rdfs:subPropertyOf $r)
+
+($r rdf:type owl:TransitiveProperty), ($x $r $y), ($y $r $z) -> ($x $r $z)
+($r rdf:type owl:ReflexiveProperty), ($x $r $y) -> ($x $r $x)
+($r rdf:type owl:ReflexiveProperty), ($x $r $y) -> ($y $r $y)
+($r rdf:type owl:SymmetricProperty), ($x $r $y) -> ($y $r $x)

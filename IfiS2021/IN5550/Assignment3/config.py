@@ -1,0 +1,2 @@
+OUT_DIM = 768
+NORBERT_HUGGINGFACE_PATH = 'ltgoslo/norbert'

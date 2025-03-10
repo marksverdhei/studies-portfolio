@@ -1,0 +1,8 @@
+numpy
+torch
+sklearn
+pillow
+flask
+tqdm
+pandas
+torchvision

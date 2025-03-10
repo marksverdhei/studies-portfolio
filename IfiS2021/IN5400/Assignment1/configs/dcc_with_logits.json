@@ -1,0 +1,12 @@
+{
+    "root_dir": "/itf-fi-ml/shared/IN5400/dataforall/mandatory1/VOCdevkit/VOC2012/",
+    "use_gpu": true,
+    "lr": 0.005,
+    "model_folder": "bin/logitmodels",
+    "batchsize_train": 16,
+    "batchsize_val": 64,
+    "maxnumepochs": 5,
+    "scheduler_stepsize": 10,
+    "scheduler_factor": 0.3,
+    "logits": true
+}

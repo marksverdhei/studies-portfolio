@@ -1,0 +1,13 @@
+{
+    "root_dir": "data/cluster_data/VOCdevkit/VOC2012/",
+    "model_folder": "bin/default_model",
+    "use_gpu": false,
+    "lr": 0.005,
+    "batchsize_train": 64,
+    "batchsize_val": 64,
+    "epochs": 1,
+    "scheduler_stepsize": 10,
+    "scheduler_factor": 0.3,
+    "adam": false,
+    "freeze": true
+}

@@ -1,0 +1,12 @@
+{
+    "train_data_path": "../data/train_set.tsv",
+    "dev_set": "../data/dev_set.tsv",
+    "model_folder": "../bin/classifiers/ffw_fixed_size",
+    "model_type": "dense",
+    "inputmethod": "fixed_size",
+    "preprocessing": "pos_lemma",
+    "learning_rate": 0.001,
+    "checkpoint_on_epochs": 5,
+    "epochs": 5,
+    "embedding_type": "word2vec"
+}

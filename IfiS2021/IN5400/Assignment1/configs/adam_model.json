@@ -1,0 +1,13 @@
+{
+    "root_dir": "/itf-fi-ml/shared/IN5400/dataforall/mandatory1/VOCdevkit/VOC2012/",
+    "model_folder": "bin/default_model_adam",
+    "use_gpu": true,
+    "lr": 0.001,
+    "batchsize_train": 16,
+    "batchsize_val": 64,
+    "epochs": 15,
+    "scheduler": null,
+    "adam": true,
+    "freeze": true,
+    "seed": 42
+}

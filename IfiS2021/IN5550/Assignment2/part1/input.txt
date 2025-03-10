@@ -1,0 +1,13 @@
+almost_ADV
+all_DET
+current_ADV
+dependency_NOUN
+parser_NOUN
+classify_VERB
+base_VERB
+on_PREP
+million_NUM
+of_PREP
+sparse_ADJ
+indicator_NOUN
+feature_NOUN

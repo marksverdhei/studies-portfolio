@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Prediction viewer</title>
+    </head>
+    <body>
+        <h2>Currently showing class: {{ current_class }}</h2>
+        <form class="prev" action="/prev" method="post">
+            <input type="submit" name="button" value="prev class"/>
+        </form>
+        <form class="next" action="/next" method="post">
+            <input type="submit" name="button" value="next class"/>
+        </form>
+        <form class="prev" action="/reverse" method="post">
+            <input type="submit" name="button" value="{{ "Show lowest scores" if state["reverse"] else "Show highest scores" }}" />
+        </form>
+        {% for img in images %}
+            <img src="{{ img }}" height="200" width="200" />
+        {% endfor %}
+        <!-- <select id="model">
+            {% for c in classes %}
+                <option value="{{ c }}">{{ c }}</option>
+            {% endfor %}
+        </select> -->
+    </body>
+</html>

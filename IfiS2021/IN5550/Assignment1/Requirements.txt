@@ -1,0 +1,6 @@
+numpy
+sklearn
+pandas
+torch
+tabulate
+tensorflow

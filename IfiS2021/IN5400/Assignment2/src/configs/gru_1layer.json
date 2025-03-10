@@ -1,0 +1,33 @@
+{
+    "modelParam": {
+        "batch_size": 128,
+        "cuda": {"use_cuda": true,
+                "device_idx": 0},
+        "numbOfCPUThreadsUsed": 10,
+        "numbOfEpochs": 50,
+        "data_dir": "/itf-fi-ml/shared/IN5400/dataforall/mandatory2/data/coco/",
+        "img_dir": "loss_images_test/",
+        "modelsDir": "storedModels_test/",
+        "modelName": "gru_1layer/",
+        "restoreModelLast": 0,
+        "restoreModelBest": 0,
+        "modeSetups": [["train", true], ["val", true]],
+        "inNotebook": false,
+        "inference": false
+    },
+    "config": {
+        "optimizer": "adamW",
+        "learningRate": {"lr": 0.001},
+        "weight_decay": 0.00001,
+        "number_of_cnn_features": 2048,
+        "embedding_size": 300,
+        "vocabulary_size": 10000,
+        "truncated_backprop_length": 25,
+        "hidden_state_sizes": 512,
+        "num_rnn_layers": 1,
+        "scheduler_milestones": [75, 90],
+        "scheduler_factor": 0.2,
+        "featurepathstub": "detectron2_lim10maxfeatures",
+        "cellType": "GRU"
+    }
+}

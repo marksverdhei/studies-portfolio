@@ -1,0 +1,12 @@
+{
+    "root_dir": "/itf-fi-ml/shared/IN5400/dataforall/mandatory1/VOCdevkit/VOC2012/",
+    "use_gpu": true,
+    "lr": 0.0005,
+    "batchsize_train": 16,
+    "batchsize_val": 128,
+    "epochs": 34,
+    "model_folder": "bin/strong_sgd_model",
+    "scheduler_stepsize": 10,
+    "scheduler_factor": 0.3,
+    "freeze": false
+}

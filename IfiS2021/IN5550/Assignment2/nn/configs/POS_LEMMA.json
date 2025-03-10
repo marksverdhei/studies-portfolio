@@ -1,0 +1,15 @@
+{
+    "train_data_path": "../data/train_set.tsv",
+    "dev_set": "../data/dev_set.tsv",
+    "model_folder": "../bin/classifiers/pos_lemma",
+    "model_type": "dense",
+    "inputmethod": "average",
+    "preprocessing": "pos_lemma",
+    "functional_words": true,
+    "learning_rate": 0.01,
+    "checkpoint_on_epochs": 50,
+    "epochs": 50,
+    "embedding_type": "word2vec",
+    "fine_tune": false,
+    "raw": false
+}
